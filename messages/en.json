@@ -8,5 +8,17 @@
         "title": "About",
         "description": "This is the about page",
         "home": "home"
+    },
+    "Metadata": {
+        "title": "MetadataHello World"
+    },
+    "good": {
+        "title": "Good",
+        "description": "This is the good page"
+    },
+    "category": {
+        "loading": "Loading...",
+        "error": "Failed to load, please try again later.",
+        "noProducts": "No products in this category"
     }
 }

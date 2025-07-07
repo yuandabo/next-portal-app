@@ -20,9 +20,23 @@
 
 import {useTranslations} from 'next-intl';
 import {Link} from '@/i18n/navigation';
+import {use} from 'react';
+import {setRequestLocale,getTranslations} from 'next-intl/server';
+export async function generateMetadata({params}:{params:Promise<{locale:string}>}) {
+  const {locale} = await params;  
+  const t = await getTranslations({locale, namespace: 'home'});
  
-export default function HomePage() {
+  return {
+    title: t('title')
+  };
+}
+export default function HomePage({params}:{params:Promise<{locale:string}>}) {
+  const {locale} = use(params);
+  
+  // Enable static rendering
+  setRequestLocale(locale);
   const t = useTranslations('home');
+
   return (
     <div>
       <h1>{t('title')}</h1>
