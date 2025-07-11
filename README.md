@@ -1,7 +1,8 @@
-Next: ssr/ssg, i18n, jest/cypress,cd/cd,api路由,动态导入,hooks,context,redux/zustand,tailwind.restful,服务器组件
-next+cypress https://github.com/yuandabo/jest-practices/tree/main/next/with-cypress-app
+Next: ssr/ssg, i18n, jest/cypress,cd/cd,api路由,动态导入,hooks,context,redux/zustand,tailwind.restful,服务器组件Next: ssr/ssg, i18n, jest/cypress,cd/cd,api路由,动态导入,hooks,context,redux/zustand,tailwind.restful,服务器组件
+
 为什么选择nextjs 性能优化、开发效率提升 和 全栈能力。多渲染模式、路由系统和内置优化工具，使得从个人项目到企业级应用均能高效构建。对于追求高性能、高可维护性和快速迭代的团队，Next.js 是不可或缺的选择。
 Next 项目目标：
+
 [x] SEO：SSG、ISR、SSR 
 [x] Tailwind CSS 
 [x] 动态路由 
@@ -12,7 +13,11 @@ Next 项目目标：
 [x] HTTP 头管理 
 [x] 结合鉴权中间件
 [x] 国际化
+
 项目地址：https://github.com/yuandabo/next-portal-app
+
+
+next+cypress https://github.com/yuandabo/jest-practices/tree/main/next/with-cypress-app
 
 next-intl 国际化方案：
 app-router-without-i18n-routing：
