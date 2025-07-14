@@ -19,14 +19,18 @@ export function ProductDetailClient({
 }: {
   fallbackData: Product;
 }) {
+  console.log("fallbackData", fallbackData);
+
   const { data, isLoading } = useSWR(
     `/api/product/${fallbackData.slug}`,
     fetcher,
     {
       fallbackData,
-      refreshInterval: 30000, // 每 30 秒自动刷新
+      refreshInterval: 60000, // 每 60 秒自动刷新
     }
   );
+
+  console.log("data", data);
 
   if (isLoading) return <p className="p-4">加载中...</p>;
 

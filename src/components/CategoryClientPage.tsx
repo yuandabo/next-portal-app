@@ -12,6 +12,7 @@ type Category = {
   products: Product[];
 };
 
+import { useRouter } from "next/navigation";
 import useSWR from "swr";
 
 export function CategoryClientPage({
@@ -19,6 +20,7 @@ export function CategoryClientPage({
 }: {
   fallbackData: Category;
 }) {
+  const router = useRouter();
   const { data } = useSWR(
     `/api/category/${fallbackData.slug}`,
     (url) => fetch(url).then((res) => res.json()),
@@ -30,7 +32,11 @@ export function CategoryClientPage({
       <h1 className="text-2xl font-bold mb-4">{data.name}</h1>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         {data.products.map((p: Product) => (
-          <div key={p.id} className="border p-3 rounded">
+          <div
+            key={p.id}
+            className="border p-3 rounded cursor-point"
+            onClick={() => router.push(`/product/123`)}
+          >
             <img
               src={p.image}
               alt={p.name}

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import useSWR from "swr";
 
 type CartItem = {
@@ -44,9 +45,12 @@ export function CartClientPage({ fallbackData }: { fallbackData: CartItem[] }) {
             </div>
           ))}
           <div className="text-right font-bold text-lg">总计：¥ {total}</div>
-          <button className="w-full mt-4 bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
+          <Link
+            href={"/checkout"}
+            className="w-full mt-4 bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+          >
             去结算
-          </button>
+          </Link>
         </div>
       )}
     </div>

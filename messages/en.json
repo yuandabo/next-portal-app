@@ -20,5 +20,30 @@
         "loading": "Loading...",
         "error": "Failed to load, please try again later.",
         "noProducts": "No products in this category"
+    },
+    "homepage": {
+        "title": "Discover great products, start a better life",
+        "subtitle": "Curated goods, authentic guarantee, fast delivery",
+        "cta": "Shop Now",
+        "hotCategories": "Hot Categories"
+    },
+    "nav": {
+        "cart": "Cart",
+        "login": "Login",
+        "switchTo": "切换到中文",
+        "blog": "blog"
+    },
+    "checkout": {
+        "title": "Checkout Information",
+        "name": "Full Name",
+        "address": "Shipping Address",
+        "phone": "Phone Number",
+        "submit": "Submit Order",
+        "success": "Order submitted successfully!",
+        "errors": {
+            "nameRequired": "Name is required",
+            "addressRequired": "Address is required",
+            "phoneInvalid": "Invalid phone number"
+        }
     }
 }

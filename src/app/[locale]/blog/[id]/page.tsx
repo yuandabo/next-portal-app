@@ -60,7 +60,7 @@ export default async function Page({
   };
   return (
     <main>
-      <h1>{post.title}</h1>
+      <h1>blog：{id}</h1>
       <p>{post.content}</p>
     </main>
   );

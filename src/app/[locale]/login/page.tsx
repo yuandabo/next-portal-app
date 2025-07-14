@@ -4,7 +4,9 @@
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import Cookies from "js-cookie";
-
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 export default function LoginPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -22,21 +24,16 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="max-w-sm mx-auto mt-20 p-4 border rounded space-y-4">
-      <h1 className="text-xl font-bold">登录</h1>
-      <input
-        type="text"
-        className="border px-3 py-2 w-full"
-        placeholder="请输入用户名"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <button
-        className="w-full bg-blue-600 text-white py-2 rounded"
-        onClick={handleLogin}
-      >
-        登录
-      </button>
-    </div>
+    <Card className="max-w-sm mx-auto mt-20">
+      <CardContent className="space-y-4 p-6">
+        <Input
+          placeholder="用户名"
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <Button className="w-full" onClick={handleLogin}>
+          登录
+        </Button>
+      </CardContent>
+    </Card>
   );
 }

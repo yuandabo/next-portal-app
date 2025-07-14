@@ -20,5 +20,30 @@
         "loading": "加载中...",
         "error": "加载失败，请稍后再试。",
         "noProducts": "该类目暂无商品"
+    },
+    "homepage": {
+        "title": "发现好物，开启美好生活",
+        "subtitle": "精选商品，正品保障，极速发货",
+        "cta": "立即选购",
+        "hotCategories": "热门分类"
+    },
+    "nav": {
+        "cart": "购物车",
+        "login": "登录",
+        "switchTo": "切换到英文",
+        "blog": "帮助文档"
+    },
+    "checkout": {
+        "title": "结算信息",
+        "name": "收货人姓名",
+        "address": "收货地址",
+        "phone": "联系电话",
+        "submit": "提交订单",
+        "success": "订单已提交！",
+        "errors": {
+            "nameRequired": "请输入姓名",
+            "addressRequired": "请输入地址",
+            "phoneInvalid": "请输入有效的手机号"
+        }
     }
 }
