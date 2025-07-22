@@ -1,4 +1,4 @@
-// src/middleware.ts
+// middleware.ts
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
@@ -6,17 +6,17 @@ const protectedRoutes = ["/cart", "/checkout"];
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+  const locale = pathname.split("/")[1] || "en"; // 提取 locale
 
-  // 检查路径是否是受保护的
   const isProtected = protectedRoutes.some((route) =>
-    pathname.startsWith(`/${request.nextUrl.locale}${route}`)
+    pathname.startsWith(`/${locale}${route}`)
   );
 
   const hasAuthToken = Boolean(request.cookies.get("auth_token")?.value);
 
   if (isProtected && !hasAuthToken) {
-    const loginUrl = new URL(`/${request.nextUrl.locale}/login`, request.url);
-    loginUrl.searchParams.set("redirect", pathname); // 保存原始跳转路径
+    const loginUrl = new URL(`/${locale}/login`, request.url);
+    loginUrl.searchParams.set("redirect", pathname); // 原路径
     return NextResponse.redirect(loginUrl);
   }
 
@@ -24,5 +24,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!api|_next|favicon.ico).*)"], // 排除 API、静态资源
+  matcher: ["/((?!api|_next|favicon.ico).*)"],
 };

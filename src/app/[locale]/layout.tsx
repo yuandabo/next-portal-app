@@ -32,6 +32,7 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { setRequestLocale } from "next-intl/server";
+import { SessionProvider } from "next-auth/react";
 import "../globals.css";
 // 为所有页面生成静态渲染
 export function generateStaticParams() {
@@ -53,8 +54,33 @@ export default async function LocaleLayout({
   setRequestLocale(locale);
   return (
     <html lang={locale}>
+      <head>
+        <title>My Next Portal Web</title>
+        <meta name="google" content="nositelinkssearchbox" key="sitelinks" />
+        <meta name="google" content="notranslate" key="notranslate" />
+        <meta
+          name="description"
+          key="desc"
+          content="Next: ssr/ssg, i18n, jest/cypress,cd/cd,api路由,动态导入,hooks,context,redux/zustand,tailwind.restful,服务器组件Next: ssr/ssg, i18n, jest/cypress,cd/cd,api路由,动态导入,hooks,context,redux/zustand,tailwind.restful,服务器组件"
+        />
+        <meta property="og:title" content="My Next Portal Web" />
+        <meta
+          property="og:description"
+          content="Next: ssr/ssg, i18n, jest/cypress,cd/cd,api路由,动态导入,hooks,context,redux/zustand,tailwind.restful,服务器组件Next: ssr/ssg, i18n, jest/cypress,cd/cd,api路由,动态导入,hooks,context,redux/zustand,tailwind.restful,服务器组件"
+        />
+        <meta
+          property="og:image"
+          content="https://example.com/images/cool-page.jpg"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter&display=optional"
+          rel="stylesheet"
+        />
+      </head>
       <body>
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <SessionProvider>
+          <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        </SessionProvider>
       </body>
     </html>
   );
