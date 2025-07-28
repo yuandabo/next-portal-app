@@ -18,7 +18,12 @@ export default function LoginForm() {
   return (
     <Card className="max-w-sm mx-auto mt-20">
       <CardContent className="space-y-4 p-6">
-        <form action={formAction}>
+        <form
+          action={async (formData) => {
+            const username = formData.get("username") as string;
+            await formAction({ username });
+          }}
+        >
           <Input name="username" placeholder="用户名" />
           <Button className="w-full" type="submit" disabled={isPending}>
             登录
