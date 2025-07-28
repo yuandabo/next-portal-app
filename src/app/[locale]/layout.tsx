@@ -28,6 +28,18 @@
 //   );
 // }
 
+import { Metadata } from "next";
+// 优先级更高
+export const metadata: Metadata = {
+  title: {
+    default: "My Next Portal Web",
+    template: "%s | My Next Portal Web",
+  },
+  description:
+    "Next: ssr/ssg, i18n, jest/cypress,cd/cd,api路由,动态导入,hooks,context,redux/zustand,tailwind.restful,服务器组件Next: ssr/ssg, i18n, jest/cypress,cd/cd,api路由,动态导入,hooks,context,redux/zustand,tailwind.restful,服务器组件",
+  // metadataBase: new URL("https://next-learn-dashboard.vercel.sh"),
+};
+
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
